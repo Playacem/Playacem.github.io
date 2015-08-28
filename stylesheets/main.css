@@ -26,3 +26,11 @@
         background: #3cb0fd;
         text-decoration: none;
     }
+    
+    #left {
+        float: left;
+    }
+    
+    #right {
+        float: right;
+    }
