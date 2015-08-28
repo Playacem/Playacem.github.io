@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Everything</title>
+    <link rel="stylesheet" href="https://playacem.github.io/stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Escape Everything wtih Backslashes</h1>
+    </header>
+    <main>
+        <p>Enter any text. Get every single symbol escaped with backslashes (\)</p>
+        <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
+        <div>
+            <label for="in">Input</label>
+            <br>
+            <textarea id="in">Enter your text here.</textarea>
+        </div>
+        <div>
+            <label for="out">Escaped result</label>
+            <br>
+            <textarea id="out" readonly>Modify Input for results.</textarea>
+            <br>
+            <a href="#" id="selectRes" class="button">Select result</a>
+        </div>
+        <script>
+            $('#in').on('click keypress cut paste keyup', escape);
+            $('#selectRes').click(selectResult);
+
+            function escape() {
+                var content = $(this).val();
+                var split = content.split("");
+                var array = new Array();
+
+                $.each(split, function (i, obj) {
+                    var res = '\\' + obj;
+                    array.push(res);
+
+                });
+
+                var escaped = array.join('');
+                $('#out').text(escaped);
+            }
+
+            function selectResult() {
+                $('#out').select();
+                return false;
+            }
+        </script>
+    </main>
+    <footer>
+        <p>© 2015 by Playacem</p>
+    </footer>
+</body>
+
+</html>
