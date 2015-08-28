@@ -17,19 +17,22 @@
     <main>
         <p>Enter any text. Get every single symbol escaped with backslashes (\)</p>
         <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
-        <div id="divLeft">
-            <label for="in">Input</label>
-            <br>
-            <textarea id="in">Enter your text here.</textarea>
-            <br>
-            <a href="#" id="btnForceUpdate" class="button">Force Update</a>
-        </div>
-        <div id="divRight">
-            <label for="out">Escaped result</label>
-            <br>
-            <textarea id="out" readonly>Modify Input for results.</textarea>
-            <br>
-            <a href="#" id="btnSelectRes" class="button">Select result</a>
+
+        <div class="container">
+            <div>
+                <label for="in">Input</label>
+                <br>
+                <textarea id="in">Enter your text here.</textarea>
+                <br>
+                <a href="#" id="btnForceUpdate" class="button">Force Update</a>
+            </div>
+            <div>
+                <label for="out">Escaped result</label>
+                <br>
+                <textarea id="out" readonly>Modify Input for results.</textarea>
+                <br>
+                <a href="#" id="btnSelectRes" class="button">Select result</a>
+            </div>
         </div>
 
         <script>

@@ -6,11 +6,36 @@ div {
     padding: 10px;
 }
 
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    clear: both;
+}
+
+p {
+    text-align: center;
+}
+
 textarea {
     width: 300px;
     height: 150px;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    /* main axis */
+    align-content: flex-start;
+    /* no effect with one line of flex items */
 }
 
 .button {
@@ -33,26 +58,4 @@ textarea {
 
 #divRight {
     float: right;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.clearLeft {
-    clear: left;
-}
-
-.clearRight {
-    clear: right;
-}
-
-footer {
-    margin-top: 10px;
-    padding: 10px;
-    clear: both;
 }
