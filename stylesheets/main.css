@@ -1,36 +1,58 @@
-    body {
-        font-family: sans-serif;
-    }
-    
-    div {
-        padding: 10px;
-    }
-    
-    textarea {
-        width: 300px;
-        height: 150px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-    
-    .button {
-        background: #3498db;
-        border-radius: 18px;
-        color: #ffffff;
-        font-size: 20px;
-        padding: 10px 20px 10px 20px;
-        text-decoration: none;
-    }
-    
-    .button:hover {
-        background: #3cb0fd;
-        text-decoration: none;
-    }
-    
-    #left {
-        float: left;
-    }
-    
-    #right {
-        float: right;
-    }
+body {
+    font-family: sans-serif;
+}
+
+div {
+    padding: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background: #3498db;
+    border-radius: 18px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+}
+
+#divLeft {
+    float: left;
+}
+
+#divRight {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearLeft {
+    clear: left;
+}
+
+.clearRight {
+    clear: right;
+}
+
+footer {
+    margin-top: 10px;
+    padding: 10px;
+    clear: both;
+}
