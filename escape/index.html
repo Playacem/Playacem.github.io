@@ -11,66 +11,70 @@
 </head>
 
 <body>
-    <header>
+<div class="divRoot">
+    <header class="header">
         <h1>Escape Everything with Backslashes</h1>
     </header>
-    <main>
+
+    <main class="main">
         <p>Enter any text. Get every single symbol escaped with backslashes (\)</p>
+
         <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
-
-        <div class="container">
-            <div>
-                <label for="in">Input</label>
-                <br>
-                <textarea id="in" placeholder="Enter your text here."></textarea>
-                <br>
-                <a href="#" id="btnForceUpdate" class="button">Force Update</a>
-            </div>
-            <div>
-                <label for="out">Escaped result</label>
-                <br>
-                <textarea id="out" readonly placeholder="Modify Input for results."></textarea>
-                <br>
-                <a href="#" id="btnSelectRes" class="button">Select result</a>
-            </div>
-        </div>
-
-        <script>
-            $('#in').on('click keypress cut paste keyup', escape);
-            $('#btnSelectRes').click(selectResult);
-            $('#btnForceUpdate').click(forceUpdate);
-
-            function escape() {
-                var content = $(this).val();
-                var split = content.split("");
-                var array = new Array();
-
-                $.each(split, function (i, obj) {
-                    var res = '\\' + obj;
-                    array.push(res);
-
-                });
-
-                var escaped = array.join('');
-                $('#out').text(escaped);
-            }
-
-            function selectResult() {
-                //force escaping
-                $('#in').click();
-                $('#out').select();
-                return false;
-            }
-
-            function forceUpdate() {
-                $('#in').click();
-                return false;
-            }
-        </script>
     </main>
-    <footer>
+
+    <div class="divInOut divIn">
+        <label for="in">Input</label>
+        <br>
+        <textarea id="in" placeholder="Enter your text here."></textarea>
+        <br>
+        <a href="#" id="btnForceUpdate" class="button">Force Update</a>
+    </div>
+
+    <div class="divInOut divOut">
+        <label for="out">Escaped result</label>
+        <br>
+        <textarea id="out" readonly placeholder="Modify Input for results."></textarea>
+        <br>
+        <a href="#" id="btnSelectRes" class="button">Select result</a>
+    </div>
+
+    <script>
+        $('#in').on('click keypress cut paste keyup', escape);
+        $('#btnSelectRes').click(selectResult);
+        $('#btnForceUpdate').click(forceUpdate);
+
+        function escape() {
+            var content = $(this).val();
+            var split = content.split("");
+            var array = [];
+
+            $.each(split, function (i, obj) {
+                var res = '\\' + obj;
+                array.push(res);
+
+            });
+
+            var escaped = array.join('');
+            $('#out').text(escaped);
+        }
+
+        function selectResult() {
+            //force escaping
+            $('#in').click();
+            $('#out').select();
+            return false;
+        }
+
+        function forceUpdate() {
+            $('#in').click();
+            return false;
+        }
+    </script>
+
+    <footer class="footer">
         <p>Licensed under the <a href="https://playacem.github.io/license.html">MIT License</a></p>
     </footer>
+</div>
 </body>
 
 </html>

@@ -6,19 +6,8 @@ div {
     padding: 10px;
 }
 
-header {
-    text-align: center;
-}
-
 footer {
-    text-align: center;
-    margin: auto;
     padding: 10px;
-    clear: both;
-}
-
-p {
-    text-align: center;
 }
 
 textarea {
@@ -28,14 +17,28 @@ textarea {
     margin-bottom: 10px;
 }
 
-.container {
+.divRoot {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    /* main axis */
-    align-content: flex-start;
-    /* no effect with one line of flex items */
+    text-align: center;
+}
+
+.divRoot > * {
+    flex: 1 100%;
+}
+
+/* medium sized screens */
+@media all and (min-width: 600px) {
+    .divInOut { flex: 1 auto; }
+}
+
+/* desktop sized screens */
+@media all and (min-width: 800px) {
+    .main {flex: 3 0px;}
+    .divIn { order: 1; text-align: left;}
+    .main    { order: 2; }
+    .divOut { order: 3; text-align: right;}
+    .footer  { order: 99; }
 }
 
 .button {
@@ -50,12 +53,4 @@ textarea {
 .button:hover {
     background: #3cb0fd;
     text-decoration: none;
-}
-
-#divLeft {
-    float: left;
-}
-
-#divRight {
-    float: right;
 }
