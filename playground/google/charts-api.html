@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Charts Api Playground</title>
+    <!-- Load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <!-- Load Google's ajaxApi -->
+    <script src="https://www.google.com/jsapi"></script>
+    <script>
+        google.load('visualization', '1.0', {
+            'packages': ['corechart', 'table'],
+            'callback': drawCharts
+        });
+
+        function drawCharts() {
+            drawTable();
+        }
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Category name');
+            data.addColumn('number', 'Not completed');
+            data.addColumn('number', 'Completed');
+
+            data.addRows([
+                ['Cat1', 3, 4],
+                ['Cat2', 42, 344],
+                ['Cat3', 1, 3],
+                ['Cat4', 33, 345],
+                ['Cat5', 12, 343]
+            ]);
+
+            var options = {
+                allowHtml: true,
+                showRowNumber: true,
+                sortColumn: 0,
+                width: '80%',
+                height: '100%'
+            };
+
+            var table = new google.visualization.Table(document.getElementById('divTable'));
+            table.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+<div id="root">
+    <header><h1>Google Charts Api Playground</h1></header>
+    <main><p>Testland of the Google Charts Api</p></main>
+    <div id="divTable"></div>
+    <div id="divPie"></div>
+    <div id="divDonut"></div>
+</div>
+</body>
+</html>
