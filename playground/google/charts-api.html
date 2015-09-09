@@ -16,6 +16,7 @@
 
         function drawCharts() {
             drawTable();
+            drawTable2();
         }
 
         function drawTable() {
@@ -43,6 +44,21 @@
             var table = new google.visualization.Table(document.getElementById('divTable'));
             table.draw(data, options);
         }
+
+        function drawTable2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Bookmarked content');//change on a page basis?
+            data.addColumn('string', 'Lastest');
+            data.addColumn('string', 'Status');
+            data.addColumn('string', 'Remove');
+            data.addColumn('string', 'setCategory');
+
+            data.addColumn('string', 'Category');
+            data.addColumn('string', 'linkToContent');
+            data.addColumn('string', 'linkToCover');
+            data.addColumn('string', 'tooltipText');
+
+        }
     </script>
 </head>
 <body>
@@ -50,6 +66,7 @@
     <header><h1>Google Charts Api Playground</h1></header>
     <main><p>Testland of the Google Charts Api</p></main>
     <div id="divTable"></div>
+    <div id="divTable2"></div>
     <div id="divPie"></div>
     <div id="divDonut"></div>
 </div>
