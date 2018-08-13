@@ -17,7 +17,7 @@
     </header>
 
     <main class="main">
-        <p>Enter any text. Get every single symbol escaped with backslashes (\)</p>
+        <p>Enter any text. Get every special markdown character escaped with backslashes (\)</p>
 
         <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
     </main>
@@ -42,19 +42,19 @@
         $('#in').on('click keypress cut paste keyup', escape);
         $('#btnSelectRes').click(selectResult);
         $('#btnForceUpdate').click(forceUpdate);
-
+        let markdownSpecialChars = '\\`*_{}[]()#+-.!'.split('');
         function escape() {
-            var content = $(this).val();
-            var split = content.split("");
-            var array = [];
+            let content = $(this).val();
+            let split = content.split('');
+            let array = [];
 
             $.each(split, function (i, obj) {
-                var res = '\\' + obj;
+                let res = markdownSpecialChars.indexOf(obj) !== -1 ? '\\' + obj : obj;
                 array.push(res);
 
             });
 
-            var escaped = array.join('');
+            let escaped = array.join('');
             $('#out').text(escaped);
         }
 
