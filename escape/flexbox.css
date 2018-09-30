@@ -1,0 +1,30 @@
+textarea {
+    width: 300px;
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.divRoot {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.divRoot > * {
+    flex: 1 100%;
+}
+
+/* medium sized screens */
+@media all and (min-width: 600px) {
+    .divInOut { flex: 1 auto; }
+}
+
+/* desktop sized screens */
+@media all and (min-width: 800px) {
+    .main {flex: 3 0px;}
+    .divIn { order: 1; text-align: right;}
+    .main    { order: 2; }
+    .divOut { order: 3; text-align: left;}
+    .footer  { order: 99; }
+}
