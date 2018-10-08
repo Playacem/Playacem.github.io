@@ -1,2 +1,3 @@
 # Playacem.github.io
-Github.io page
+
+Playacem's homepage, hosted on github.io

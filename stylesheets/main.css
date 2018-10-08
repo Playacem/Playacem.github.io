@@ -11,7 +11,7 @@ footer {
 }
 
 .button {
-    background: #3498db;
+    background: #103B56;
     border-radius: 18px;
     color: #ffffff;
     font-size: 20px;
@@ -20,6 +20,6 @@ footer {
 }
 
 .button:hover {
-    background: #3cb0fd;
+    background: #165883;
     text-decoration: none;
 }
