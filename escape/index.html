@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="Escapes special characters in your text, so it can appear on sites just as it was written.">
+    <meta name="Description"
+        content="Escapes special characters in your text, so it can appear on sites just as it was written.">
     <title>Escape Everything</title>
     <link rel="stylesheet" href="/stylesheets/main.css">
     <link rel="stylesheet" href="flexbox.css">
@@ -14,38 +15,38 @@
 </head>
 
 <body>
-<div class="divRoot">
-    <header class="header">
-        <h1>Escape Everything with Backslashes</h1>
-    </header>
+    <div class="divRoot">
+        <header class="header">
+            <h1>Escape Everything with Backslashes</h1>
+        </header>
 
-    <main class="main">
-        <p>Enter any text. Get every special markdown character escaped with backslashes (\)</p>
+        <main class="main">
+            <p>Enter any text. Get every special markdown character escaped with backslashes (\)</p>
 
-        <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
-    </main>
+            <p>Useful for Markdown comment sections where you want every character to be displayed as pasted.</p>
+        </main>
 
-    <div class="divInOut divIn">
-        <label for="in">Input</label>
-        <br>
-        <textarea id="in" placeholder="Enter your text here."></textarea>
-        <br>
-        <a href="#" id="btnForceUpdate" class="button">Force Update</a>
+        <div class="divInOut divIn">
+            <label for="in">Input</label>
+            <br>
+            <textarea id="in" placeholder="Enter your text here."></textarea>
+            <br>
+            <a href="#" id="btnForceUpdate" class="button">Force Update</a>
+        </div>
+
+        <div class="divInOut divOut">
+            <label for="out">Escaped result</label>
+            <br>
+            <textarea id="out" readonly placeholder="Modify Input for results."></textarea>
+            <br>
+            <a href="#" id="btnSelectRes" class="button">Select result</a>
+        </div>
+
+        <footer class="footer">
+            <p>Licensed under the <a href="/license.html">MIT License</a></p>
+            <p>Back to the <a href="/index.html">root site</a></p>
+        </footer>
     </div>
-
-    <div class="divInOut divOut">
-        <label for="out">Escaped result</label>
-        <br>
-        <textarea id="out" readonly placeholder="Modify Input for results."></textarea>
-        <br>
-        <a href="#" id="btnSelectRes" class="button">Select result</a>
-    </div>
-
-    <footer class="footer">
-        <p>Licensed under the <a href="/license.html">MIT License</a></p>
-        <p>Back to the <a href="/index.html">root site</a></p>
-    </footer>
-</div>
 </body>
 
 </html>
