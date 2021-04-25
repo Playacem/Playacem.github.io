@@ -51,9 +51,8 @@
             let array = [];
 
             $.each(split, function (i, obj) {
-                let res = markdownSpecialChars.indexOf(obj) !== -1 ? '\\' + obj : obj;
+                let res = markdownSpecialChars.indexOf(obj) >= 0 ? '\\' + obj : obj;
                 array.push(res);
-
             });
 
             let escaped = array.join('');
@@ -74,7 +73,8 @@
     </script>
 
     <footer class="footer">
-        <p>Licensed under the <a href="https://playacem.github.io/license.html">MIT License</a></p>
+        <p>Licensed under the <a href="/license.html">MIT License</a></p>#
+        <p>Back to the <a href="/index.html">root site</a></p>
     </footer>
 </div>
 </body>
