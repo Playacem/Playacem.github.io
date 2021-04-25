@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Description" content="Escapes special characters in your text, so it can appear on sites just as it was written.">
     <title>Escape Everything</title>
-    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <link rel="stylesheet" href="flexbox.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
+    <script defer src="escape.js"></script>
 </head>
 
 <body>
@@ -39,38 +40,6 @@
         <br>
         <a href="#" id="btnSelectRes" class="button">Select result</a>
     </div>
-
-    <script>
-        $('#in').on('click keypress cut paste keyup', escape);
-        $('#btnSelectRes').click(selectResult);
-        $('#btnForceUpdate').click(forceUpdate);
-        let markdownSpecialChars = '\\`*_{}[]()#+-.!'.split('');
-        function escape() {
-            let content = $(this).val();
-            let split = content.split('');
-            let array = [];
-
-            $.each(split, function (i, obj) {
-                let res = markdownSpecialChars.indexOf(obj) >= 0 ? '\\' + obj : obj;
-                array.push(res);
-            });
-
-            let escaped = array.join('');
-            $('#out').text(escaped);
-        }
-
-        function selectResult() {
-            //force escaping
-            $('#in').click();
-            $('#out').select();
-            return false;
-        }
-
-        function forceUpdate() {
-            $('#in').click();
-            return false;
-        }
-    </script>
 
     <footer class="footer">
         <p>Licensed under the <a href="/license.html">MIT License</a></p>
