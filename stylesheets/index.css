@@ -1,0 +1,12 @@
+html {
+    font-family: monospace;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main, footer {
+    width: 40em;
+    max-width: 100%;
+}
