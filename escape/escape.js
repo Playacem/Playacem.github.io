@@ -1,29 +1,30 @@
-$('#in').on('click keypress cut paste keyup', escape);
-$('#btnSelectRes').click(selectResult);
-$('#btnForceUpdate').click(forceUpdate);
-let markdownSpecialChars = '\\`*_{}[]()#+-.!'.split('');
+$('#in').on('click keypress cut paste keyup', escape)
+$('#btnSelectRes').click(selectResult)
+$('#btnForceUpdate').click(forceUpdate)
+/** @type string[] */
+let markdownSpecialChars = '\\`*_{}[]()#+-.!'.split('')
 function escape() {
-    let content = $(this).val();
-    let split = content.split('');
-    let array = [];
+    /** @type string */
+    let content = $(this).val()
+    let split = content.split('')
 
-    $.each(split, function (i, obj) {
-        let res = markdownSpecialChars.indexOf(obj) >= 0 ? '\\' + obj : obj;
-        array.push(res);
-    });
+    let escaped = split.map(function (c) {
+        return markdownSpecialChars.indexOf(c) >= 0 ? '\\' + c : c
+    }).reduce(function (prev, curr) {
+        return prev + curr
+    }, '')
 
-    let escaped = array.join('');
-    $('#out').text(escaped);
+    $('#out').text(escaped)
 }
 
 function selectResult() {
     //force escaping
-    $('#in').click();
-    $('#out').select();
-    return false;
+    $('#in').click()
+    $('#out').select()
+    return false
 }
 
 function forceUpdate() {
-    $('#in').click();
-    return false;
+    $('#in').click()
+    return false
 }
