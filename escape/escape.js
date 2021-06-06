@@ -1,8 +1,10 @@
-$('#in').on('click keypress cut paste keyup', escape)
+const $in = $('#in')
+$in.on('click keypress cut paste keyup', escape)
 $('#btnSelectRes').click(selectResult)
 $('#btnForceUpdate').click(forceUpdate)
 /** @type string[] */
 let markdownSpecialChars = '\\`*_{}[]()#+-.!'.split('')
+
 function escape() {
     /** @type string */
     let content = $(this).val()
@@ -19,12 +21,12 @@ function escape() {
 
 function selectResult() {
     //force escaping
-    $('#in').click()
+    $in.click()
     $('#out').select()
     return false
 }
 
 function forceUpdate() {
-    $('#in').click()
+    $in.click()
     return false
 }

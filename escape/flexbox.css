@@ -17,14 +17,32 @@ textarea {
 
 /* medium sized screens */
 @media all and (min-width: 600px) {
-    .divInOut { flex: 1 auto; }
+    .divInOut {
+        flex: 1 auto;
+    }
 }
 
 /* desktop sized screens */
 @media all and (min-width: 800px) {
-    .main {flex: 3 0px;}
-    .divIn { order: 1; text-align: right;}
-    .main    { order: 2; }
-    .divOut { order: 3; text-align: left;}
-    .footer  { order: 99; }
+    .main {
+        flex: 3 0;
+    }
+
+    .divIn {
+        order: 1;
+        text-align: right;
+    }
+
+    .main {
+        order: 2;
+    }
+
+    .divOut {
+        order: 3;
+        text-align: left;
+    }
+
+    .footer {
+        order: 99;
+    }
 }
