@@ -9,7 +9,7 @@ function drawCharts() {
 }
 
 function drawTable() {
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Category name');
     data.addColumn('number', 'Not completed');
     data.addColumn('number', 'Completed');
@@ -22,7 +22,7 @@ function drawTable() {
         ['Cat5', 12, 343]
     ]);
 
-    var options = {
+    let options = {
         allowHtml: true,
         showRowNumber: true,
         sortColumn: 0,
@@ -30,12 +30,12 @@ function drawTable() {
         height: '100%'
     };
 
-    var table = new google.visualization.Table(document.getElementById('divTable'));
+    let table = new google.visualization.Table(document.getElementById('divTable'));
     table.draw(data, options);
 }
 
 function drawTable2() {
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Bookmarked content');//change on a page basis?
     data.addColumn('string', 'Lastest');
     data.addColumn('string', 'Status');
