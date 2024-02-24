@@ -30,13 +30,11 @@ function escape(event) {
     /** @type string[] */
     let chars = event.target.value.split('')
 
-    let escaped = chars.map(function (c) {
+    $out.innerText = chars.map(function (c) {
         return markdownSpecialChars.indexOf(c) >= 0 ? '\\' + c : c
     }).reduce(function (prev, curr) {
         return prev + curr
-    }, '');
-
-    $out.innerText = escaped
+    }, '')
 }
 
 function selectResult() {
